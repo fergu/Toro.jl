@@ -3,7 +3,11 @@ uuid = "db11eaeb-1f64-473a-ab1a-070dd12e6aae"
 authors = ["Kevin <9022843+fergu@users.noreply.github.com> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+ShockWaves = "c1695130-2840-4767-8981-aa8d2370ae89"
+
 [compat]
+ShockWaves = "1.0.0"
 julia = "1.6.7"
 
 [extras]
