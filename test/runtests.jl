@@ -48,7 +48,7 @@ using Test
         # NOTE: u₀ (expected) in the 5th test has the 5th digit removed (u₀(expected)=8.68975 in table 4.3). 
         # This was done as this value can not be reproduced beyond 4 digits, either in this code or via Wolfram Alpha, etc.
         # Indeed, running Wolfram out to >32 digits produces a value that matches Julia's result exactly
-        # This could potentially indicate a typo in the table, or numerical noise if the code was 32 bit, or etc
+        # This could potentially indicate a typo in the table, or numerical noise if the reference code was 32 bit, or etc
         
         absolute_tolerance = 0.01
         @testset "Center Velocity Tests" begin
@@ -84,7 +84,7 @@ using Test
         # NOTE: ρₗ(expected) and ρᵣ (expected) in the 2nd test has the 5th digit removed (ρₗ(expected)=ρᵣ(expected)=0.02185 in table 4.3). 
         # This was done as this value can not be reproduced beyond 4 digits, either in this code or via Wolfram Alpha, etc., with the expected value of P₀ supplied in the table
         # Unlike the velocity test modification above, the expected result for ρₗ or ρᵣ in table 4.3 *can* be reproduced when using P₀ calculated from CenterPressure() (or from Wolfram Alpha)
-        # Thus, the failure to reproduce the tabulated result beyond 4 digits is likely due to the recorded precision of P₀
+        # Thus, the inability to reproduce the tabulated result beyond 4 digits is likely due to the recorded precision of P₀ not being sufficient to just use it directly.
         # There are two fixes - either use the output of CenterPressure() in the test, or reduce the expected precision of the result
         # The latter was opted for in this case as we're still comparing expected results with tabulated data with this approach
         
